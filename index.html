@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Peutinger map seamless whole, in color, with overlaid layers</title>
+  <link rel="stylesheet" href="tpeut.css" type="text/css"/>
+  <script type="text/javascript">
+  
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-3702316-6']);
+    _gaq.push(['_trackPageview']);
+  
+    (function() {
+      var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+      ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  
+  </script>
+</head>
+
+<body onload="loaded()">
+  
+  <div id="container">
+    
+    <div id="hd">
+      <h1><a href=".">Peutinger map: seamless whole, in color, with overlaid layers (Map A)</a></h1>
+    </div><!-- end #hd -->
+
+    <div id="bd">
+    
+       <div class="section">
+      
+      <center><p><a href="javascript:launchViewer(800, 600)"> <img src="data/rome.jpg" alt="Rome" />
+      <br> Click here to launch viewer</a></center> 
+      <br>The viewer may be resized or closed after launch. Bookmarkable links to any particular view or selection of layers are provided by the Permanent Link option in the viewer's table of contents.</p>
+      </div>
+    
+      <div class="section">
+      <p>This dynamic map viewer is published online as part of</p>
+      <p style="text-indent: 3em;">Richard J.A. Talbert, <i>Rome's World: The Peutinger Map Reconsidered</i> (Cambridge University Press, 2010).</p>
+      <p>For more information about this map, please consult the brief <a href="http://cambridge.org/us/talbert/User_Guide.pdf">User's Guide</a> (PDF). Additional resources, and information about the print components of the entire work, may be had from the <a href="http://cambridge.org/us/talbert/">Rome's World: The Peutinger Map Reconsidered</a> web page, hosted by Cambridge University Press.</p>
+      <p>This map viewer is hosted as a courtesy to the author by the <a href="http://www.nyu.edu/isaw/">Institute for the Study of the Ancient World</a> at New York University. All questions, comments and inquiries should be directed to the 
+      <a href="mailto:awmc@unc.edu?subject=Talbert Peutinger Map A">Ancient World Mapping Center</a> at the University of North Carolina at Chapel Hill.</p>
+      </div>
+
+   
+
+	  </div><!-- end #bd -->
+
+    <div id="ft">
+        <p>Copyright &copy; Richard J. A. Talbert, 2010.<br />This publication is in copyright.  Subject to statutory exception and to the provisions of relevant collective licensing agreements, no reproduction of any part may take place without the written permission of Cambridge University Press. </p>
+    </div>
+
+  </div><!-- end #doc -->
+
+  <!-- Following div is content for the Ext UI -->
+  <div id="map-contents-wrapper">
+  <div id="map-contents">
+    <div id="tree-div"></div>
+    <div id="slider-space" style="margin-top:1em">
+      <div id="overlay-slider-space">
+        <div id="overlay-slider"></div>
+        <label for="overlay-slider">Overlay opacity</label>
+      </div>
+      <div id="background-slider-space">
+        <div id="imagery-slider"></div>
+        <label for="imagery-slider">Map opacity</label>
+      </div>
+    </div>
+    <div style="margin-top:1em">
+    <form id="select-segment-form">
+      <select id="field-segment" onchange='moveToSection(map, $("#field-segment").val())'>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        <option>6</option>
+        <option>7</option>
+        <option>8</option>
+        <option>9</option>
+        <option>10</option>
+        <option>11</option>
+      </select>
+      <label for="field-segment">Select segment</label>
+    </form>
+    </div>
+    <div  style="margin-top:1em">
+      <a href="" id="permalink">Permanent link to current view</a>
+    </div>
+  </div>
+  </div>
+
+  <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+  <script type="text/javascript" src="ext-2.3.0/adapter/jquery/ext-jquery-adapter.js"></script>
+  <script type="text/javascript" src="ext-2.3.0/ext-all.js"></script>
+  <script type="text/javascript" src="https://openlayers.org/api/2.8/OpenLayers.js"></script>
+  <script type="text/javascript" src="StrategySVG.js"></script>
+  <script type="text/javascript" src="ProtocolSVG.js"></script>
+  <script type="text/javascript" src="LayerSVG.js"></script>
+  <script type="text/javascript" src="RendererStaticSVG.js"></script>
+  <script type="text/javascript" src="TPeutPermalink.js"></script>
+  <script type="text/javascript" src="GeoExt.js"></script>
+  <script type="text/javascript" src="TPeutOverlayOpacitySlider.js"></script>
+  <script type="text/javascript" src="OpenURL.js"></script>
+  <script type="text/javascript" src="tpeut.js"></script>  
+
+</body>
+</html>

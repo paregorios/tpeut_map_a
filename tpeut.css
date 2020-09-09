@@ -1,0 +1,121 @@
+@import url("reset-fonts-grids.css");
+@import url("ext-2.3.0/resources/css/ext-all.css");
+
+html {
+  font-size: 62.5%;
+  height: 100%;
+  background-color: #DDCEB9;
+}
+
+body {  
+  font-family: 'Palatino Linotype', 'Times New Roman', Times, serif;
+  font-size: 1.6em;
+  background-color: #DDCEB9;
+  height: 100%;
+  color: #333;
+}
+
+h1, h2 {
+  font-family: Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+#container {
+  position: relative;
+  margin: 0 auto;
+  padding: 10 10 40px;
+  text-align: left;
+  width: 960px;
+  min-height: 100%;
+}
+
+#hd {
+  height: 80px;
+  padding-top: 3em;
+  text-align: center;
+}
+
+#bd {
+    clear: both;
+}
+
+.section {
+  margin: 1em;
+}
+
+#ft {
+  clear: both;
+  color: #333;
+  text-align: center;
+  font-size: 80%;
+  margin-top: 4em;
+  /*padding-left: 15%;
+  padding-right: 15%;*/
+}
+
+
+a:link, a:visited {
+  color:#333; 
+}
+
+h1 {
+  font-size: 1.8em;
+}
+
+#hd a {
+  color: #333; 
+  text-decoration: none;
+}
+
+h2 {
+  font-size: large;
+}
+
+h1, h2, h3 {
+  margin-bottom: 0.5em;
+}
+
+p {
+  margin-top: 0.5em;
+}
+
+a:link, a:visited {
+  color:#333; 
+}
+
+#map-contents-wrapper {
+  display: none;
+}
+
+#map-contents {
+  background-color: #fff;
+  height: 100%;
+}
+
+#tree {
+  margin-bottom: 1em;
+  background-color: #fff;
+}
+
+#overlay-slider-space {
+  padding-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+#background-slider-space {
+  padding-left: 2em;
+  margin-bottom: 0.5em;
+}
+
+.x-panel-body-noheader {
+  background-color: #ccc;
+  border: none;
+}
+
+.x-tree-root-ct {
+  margin-top: 0.25em;
+  margin-left: 0.25em;
+  text-align: left;
+}
+
+

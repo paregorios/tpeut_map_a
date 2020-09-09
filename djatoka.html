@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Spatially Referenced Djatoka Example</title>
+    <script type="text/javascript" src="http://openlayers.org/api/2.8/OpenLayers.js"></script>
+    <script type="text/javascript" src="OpenURL.js"></script>
+    <script type="text/javascript" src="jquery-1.3.2.min.js"></script>
+    <script type="text/javascript">
+      var map, extent, size, origin;
+      var RES = 1.0/72; // Centimeters per pixel
+      
+      function init() {
+        size = new OpenLayers.Size(31331, 2281);
+        origin = new OpenLayers.LonLat(0, 0);
+        extent = new OpenLayers.Bounds(
+          origin.lon, origin.lat,
+          origin.lon + size.w*RES, origin.lat + size.h*RES);
+ 
+        // Zoom factors of 1/8 to 1
+        var resolutions = [
+           4.0*RES, 2.0*RES, 1.0*RES];
+
+        // At zoom level 0, the image is covered by 2 x 28 tiles
+        var tileSize = new OpenLayers.Size(489, 35);
+/*
+        var mosaic = new OpenLayers.Layer.OpenURL(
+          'All section, mosaicked',
+          'http://localhost:8080/',
+          'http://localhost/base.tif',
+          extent,
+          size,
+          { format: 'image/jpeg', 
+            units: 'cm',
+            tileSize: tileSize,
+            resolutions: resolutions,
+            isBaseLayer: true }
+          );
+  */
+  
+  var baseOptions = {
+  			          units: 'cm',
+                      tileSize: new OpenLayers.Size(489, 35),
+                      isBaseLayer: true,
+                      };
+  
+  var mosaic = new OpenLayers.Layer.Image(
+            'All section, mosaicked',
+          'http://localhost/base.tif',
+          extent,
+          size,
+          baseOptions
+          );
+  
+  
+        map = new OpenLayers.Map(
+          'map',
+          { div: 'map',
+            units: 'cm',
+            tileSize: tileSize,
+            maxExtent: extent,
+            resolutions: resolutions }
+        );
+
+        map.addControl(new OpenLayers.Control.MousePosition());
+        map.addControl(new OpenLayers.Control.Scale());
+
+        map.addLayers([mosaic]);
+        map.setCenter(new OpenLayers.LonLat((extent[2]-extent[0])/2.0, (extent[3]-extent[1])/2.0), 0);
+
+        $('#bounds').replaceWith(
+          '<span>(' 
+          + extent.left + ', '
+          + extent.bottom + ', '
+          + extent.right + ', '
+          + extent.top + ')</span>'
+          );
+        }
+    </script>
+  </head>
+  <body style="margin:4em;" onload="init();">
+    <h1>Spatially Referenced Djatoka Example</h1>
+    <p>This composite is shown in centimeter units. Its bounds are <span id="bounds">(0, 0, 0, 0)</span>.</p>
+    <div id="map" style="align:center;width:576px;height:384px;border:solid gray 1px;background-color:#cccccc;margin:1.5em;"></div>
+    <p>Imagery is Copyright &copy; Richard J. A. Talbert, 2010.
+This publication is in copyright. Subject to statutory exception and to the provisions of relevant collective licensing agreements, no reproduction of any part may take place without the written permission of Cambridge University Press.
+    
+  </body>
+</html>
+
